@@ -1,5 +1,7 @@
 import Color from "@arcgis/core/Color";
 import { whenOnce } from "@arcgis/core/core/reactiveUtils";
+import IdentityManager from "@arcgis/core/identity/IdentityManager";
+import OAuthInfo from "@arcgis/core/identity/OAuthInfo";
 import SceneView from "@arcgis/core/views/SceneView";
 import WebScene from "@arcgis/core/WebScene";
 import "@esri/calcite-components/dist/calcite/calcite.css";
@@ -10,21 +12,21 @@ import "@esri/calcite-components/dist/components/calcite-loader";
 // const params = new URLSearchParams(document.location.search.slice(1));
 // const someParam = params.has("someParam");
 
-// IdentityManager.registerOAuthInfos([
-//   new OAuthInfo({
-//     appId: "",
-//     popup: true,
-//     popupCallbackUrl: `${document.location.origin}${document.location.pathname}oauth-callback-api.html`,
-//   }),
-// ]);
+IdentityManager.registerOAuthInfos([
+  new OAuthInfo({
+    appId: "KojZjH6glligLidj",
+    popup: true,
+    popupCallbackUrl: `${document.location.origin}${document.location.pathname}oauth-callback-api.html`,
+  }),
+]);
 
-// (window as any).setOAuthResponseHash = (responseHash: string) => {
-//   IdentityManager.setOAuthResponseHash(responseHash);
-// };
+(window as any).setOAuthResponseHash = (responseHash: string) => {
+  IdentityManager.setOAuthResponseHash(responseHash);
+};
 
 const map = new WebScene({
   portalItem: {
-    id: "91b46c2b162c48dba264b2190e1dbcff",
+    id: "2f1e3813919043d08a31b2cdd85190ae",
   },
 });
 
